@@ -55,6 +55,7 @@ jobs:
 
       - name: Commit and push changes, if any
         run: |
+          git config -l
           git config --local user.email "$USER_EMAIL"
           git config --local user.name "$USER_NAME"
           if [[ $(git status --porcelain) ]]; then
