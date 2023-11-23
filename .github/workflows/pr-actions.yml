@@ -55,7 +55,6 @@ jobs:
 
       - name: Commit and push changes, if any
         run: |
-          git config -l
           git config --local user.email "$USER_EMAIL"
           git config --local user.name "$USER_NAME"
           if [[ $(git status --porcelain) ]]; then
@@ -143,12 +142,12 @@ jobs:
             echo current_branch=$current_branch
             # gh pr checkout sets some git configs that we can use to make sure
             # we push to the right repo & to the right branch
-            push_remote=$(git config --get branch.${current_branch}.pushremote)
-            echo push_remote=$push_remote
-            push_remote_branch=$(git config --get branch.${current_branch}.merge)
-            echo push_remote_branch=$push_remote_branch
-            git commit -m 'Results from /fix:recache'
-            git push ${push_remote} HEAD:${push_remote_branch}
+            remote_repo=$(git config --get branch.${current_branch}.remote)
+            echo remote_repo=$remote_repo
+            remote_branch=$(git config --get branch.${current_branch}.merge)
+            echo remote_branch=$remote_branch
+            git commit -m 'Results from /fix:refcache'
+            git push ${remote_repo} HEAD:${remote_branch}
           else
             echo "No changes to commit"
           fi
