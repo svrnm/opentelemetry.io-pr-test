@@ -23,8 +23,6 @@ developer_note:
 
 <div class="l-primary-buttons mt-5">
 
-- [Learn more](/docs/what-is-opentelemetry/)
-- [Try the demo](/docs/demo/)
 - [Explore integrations](/ecosystem/integrations)
 
 </div>
