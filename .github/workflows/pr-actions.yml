@@ -7,8 +7,8 @@ on:
 env:
   COMMENT: ${{ github.event.comment.body }}
   PR_NUM: ${{ github.event.issue.number }}
-  USER_EMAIL: 107717825+opentelemetrybot@users.noreply.github.com
-  USER_NAME: opentelemetrybot
+  USER_EMAIL: svrnmbot@users.noreply.github.com
+  USER_NAME: svrnmbot
 
 jobs:
   fix-format:
